@@ -1,0 +1,42 @@
+create schema QA;
+set schema QA;
+create table QaInfo(
+	qaId integer primary key,
+	question varchar(500),
+	answer varchar(4000),
+	type varchar(150),
+	lastUpdatedDt date,
+	lastUpdatedBy varchar(50)
+);
+
+CREATE TABLE SEQUENCE_TABLE (
+		SEQ_NAME VARCHAR(50) primary key,
+		SEQ_COUNT INTEGER
+	);
+	
+	create table login_info (
+	login_id varchar(150) primary key,
+	password varchar(300),
+	is_login boolean,
+	last_login_dt timestamp,
+	last_login_ip_address varchar(15),
+	updated_by varchar(150),
+	inserted_by varchar(150),
+	session_id varchar(150),
+	updated_dt timestamp,
+	inserted_dt timestamp
+);
+
+create table login_info_audit (
+	id integer primary key,
+	login_id varchar(150),
+	password varchar(300),
+	is_login boolean,
+	last_login_dt timestamp,
+	last_login_ip_address varchar(15),
+	updated_by varchar(150),
+	inserted_by varchar(150),
+	session_id varchar(150),
+	updated_dt timestamp,
+	inserted_dt timestamp
+);
